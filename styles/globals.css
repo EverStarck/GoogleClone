@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap");
+
+html,
+body {
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 100%; /* 100% = 16px */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #020a14;
+  --white: #f1f7fe;
+  --real-white: #fff;
+  --blue: #4392f1;
+  --blutton: #6aa8f4;
+  --gray: #eff0f6;
+  --radius: 8px;
+  --red: red;
+}
