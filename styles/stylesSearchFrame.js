@@ -18,6 +18,7 @@ export const NameGroup = styled.hgroup`
 `;
 
 export const FormSearch = styled.form`
+  margin-top: 20px;
   display: flex;
   /* Button */
   label:last-of-type {

@@ -12,7 +12,7 @@ const SearchBar = ({ searchValue, setSearchValue, searchSubmit, inputH, buttonH 
         setSearchValue={setSearchValue}
         inputH={inputH}
       />
-      <Button buttonH={buttonH}/>
+      {/* <Button buttonH={buttonH}/> */}
     </FormSearch>
   );
 };

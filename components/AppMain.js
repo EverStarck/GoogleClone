@@ -11,12 +11,13 @@ const AppMain = () => {
   const { data } = useContext(ApiDataContext);
   return (
     <>
-      {/* If the state have the youtube data and is ready, show the component of the info. */}
+      {/* If the state have the youtube data and is ready, show the component of the info.
       {data.ready && data.ytData[0] !== "Error, youtube channel doesn't exist" ? (
         <InfoFrame />
       ) : (
         <>{data.loading ? <Loader /> : <SearchFrame />}</>
-      )}
+      )} */}
+      <SearchFrame />
     </>
   );
 };

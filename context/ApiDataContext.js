@@ -4,7 +4,7 @@ export const ApiDataContext = createContext();
 
 const ApiDataProvider = ({ children }) => {
   const [data, setData] = useState({
-    ytData: [],
+    gData: [],
     ready: false,
     loading: false,
   });

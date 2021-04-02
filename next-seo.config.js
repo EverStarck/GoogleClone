@@ -1,13 +1,13 @@
 export default {
-  title: "⬇ Download your YouTube Banner and Avatar",
+  title: "Google",
   description:
-    "✅ Is your YouTube  channel FAMILY FRIENDLY? Discover it and download your Banner and Avatar from your channel with just one click",
+    "A Google Clone",
   canonical: "https://www.canonical.ie/",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://www.yt2img.everstarck.com",
-    site_name: "YouTube2Image",
+    url: "https://www.googl.everstarck.com",
+    site_name: "GoogleClone",
     images: [
       {
         url: "./yt2image.png",
@@ -57,7 +57,7 @@ export default {
     {
       name: "keywords",
       content:
-        "Download, Youtube, Free, Banner, Avatar, Channel, Family friendly, black list, download banner youtube, download avatar youtube",
+        "Google, clone, google chrome",
     },
     {
       name: "google-site-verification",
