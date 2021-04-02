@@ -1,13 +1,19 @@
 import Image from "next/image";
+
 import { MainSearch } from "../../styles/stylesSearchFrame";
+
 import SearchBarContainer from "../SearchBar/SearchBarContainer";
 import Footer from "./Footer";
+import Nav from "./Nav";
+
 const SearchFrame = () => {
   return (
+    <>
+    <Nav/>
     <MainSearch>
       <Image
         src="/googlelogo.webp"
-        alt="Picture of the author"
+        alt="Logo of Google company"
         width={272}
         height={92}
       />
@@ -17,6 +23,7 @@ const SearchFrame = () => {
 
       <Footer />
     </MainSearch>
+    </>
   );
 };
 

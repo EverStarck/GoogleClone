@@ -109,7 +109,7 @@ const Input = ({ inputH = "64px", searchValue, setSearchValue }) => {
           <input
             type="search"
             title="Search"
-            aria-label="Buscar"
+            aria-label="Search"
             value={searchValue}
             onChange={refreshInputValue}
             required
