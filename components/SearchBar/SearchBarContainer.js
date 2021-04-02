@@ -1,3 +1,5 @@
+
+import Router from 'next/router'
 import { useContext, useState } from "react";
 import { fetcher } from "../../services/fetchData";
 
@@ -17,23 +19,29 @@ const SearchBarContainer = ({ inputH, buttonH }) => {
 
   const searchSubmit = (e) => {
     e.preventDefault();
-    // Reset the state
-    setError(false);
-    if (!error) {
-      setData({
-        ...data,
-        ready: false,
-        loading: true,
-      });
 
-      fetcher(searchValue).then((data) => {
-        setData({
-          gData: [data],
-          ready: true,
-          loading: false,
-        });
-      });
-    }
+    Router.push({
+        pathname: '/search',
+        query: { q: searchValue},
+    })
+
+    // Reset the state
+    // setError(false);
+    // if (!error) {
+    //   setData({
+    //     ...data,
+    //     ready: false,
+    //     loading: true,
+    //   });
+
+    //   fetcher(searchValue).then((data) => {
+    //     setData({
+    //       gData: [data],
+    //       ready: true,
+    //       loading: false,
+    //     });
+    //   });
+    // }
   };
 
   return (
