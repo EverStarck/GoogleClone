@@ -1,8 +1,9 @@
 // Styles
 import { FormSearch } from "../../styles/stylesSearchFrame";
 // Components
-import Button from "./Button";
 import Input from "./Input";
+import ButtonFrame from "./ButtonFrame";
+
 
 const SearchBar = ({ searchValue, setSearchValue, searchSubmit, inputH, buttonH }) => {
   return (
@@ -12,7 +13,7 @@ const SearchBar = ({ searchValue, setSearchValue, searchSubmit, inputH, buttonH 
         setSearchValue={setSearchValue}
         inputH={inputH}
       />
-      {/* <Button buttonH={buttonH}/> */}
+      <ButtonFrame/>
     </FormSearch>
   );
 };

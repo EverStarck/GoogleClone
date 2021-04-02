@@ -19,52 +19,14 @@ export const NameGroup = styled.hgroup`
 
 export const FormSearch = styled.form`
   margin-top: 20px;
+  max-width: 100vw;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* Button */
-  label:last-of-type {
-    span {
-      display: none;
-    }
-  }
-
-  /* Tablet */
-  @media only screen and (max-width: 820px) {
-    label:first-of-type {
-      input[type="url"] {
-        width: 100%;
-        padding-left: 16px;
-      }
-    }
-
-    label:last-of-type {
-      button[type="submit"] {
-        width: 300%;
-        background-size: 40% 40%;
-      }
-    }
-  }
-
-  /* Mobile */
-  @media only screen and (max-width: 500px) {
-    label:first-of-type {
-      input[type="url"] {
-        width: 100%;
-        height: 48px;
-        font-size: 0.75rem;
-        &:hover,
-        :focus {
-          border: 1px solid var(--black);
-        }
-      }
-    }
-
-    label:last-of-type {
-      button[type="submit"] {
-        width: 44px;
-        height: 48px;
-        background-size: 40% 40%;
-      }
-    }
+  span {
+    display: none;
   }
 `;
 

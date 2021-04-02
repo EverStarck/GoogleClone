@@ -30,9 +30,13 @@ const SearchBarFrame = styled.div`
       }
     }
   }
+
+  /* Mobile */
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
-// Media querys in stylesSearchFrame.js
 const LabelInput = styled.label`
   width: 100%;
   span {
@@ -112,7 +116,7 @@ const Input = ({ inputH = "64px", searchValue, setSearchValue }) => {
           />
         </LabelInput>
         <ButtonDelete aria-label="Delete" role="button" searchValue={searchValue} onClick={deleteSearchValue}>
-          <span tabindex="0" aria-label="Delete">
+          <span tabIndex="0" aria-label="Delete">
             <svg
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
