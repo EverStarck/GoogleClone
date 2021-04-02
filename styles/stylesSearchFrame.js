@@ -34,4 +34,9 @@ export const FooterSearch = styled.footer`
   font-size: clamp(0.75rem, 2vw, 1rem);
   position: absolute;
   bottom: 0;
+  width: 100vw;
+  display: flex;
+  color: #70757a;
+  background-color: #f2f2f2;
+  justify-content: center;
 `;
