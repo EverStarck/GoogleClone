@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ApiDataContext } from "../../context/ApiDataContext";
+
+import { useRouter } from "next/router";
 
 const SearchBarFrame = styled.div`
   width: 582px;
@@ -63,6 +65,7 @@ const ButtonDelete = styled.div`
   padding: 0 8px;
   cursor: pointer;
   span {
+    display: block !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +80,7 @@ const ButtonDelete = styled.div`
 const Input = ({ searchValue, setSearchValue }) => {
   // Context
   const { data } = useContext(ApiDataContext);
+  const router = useRouter();
 
   const refreshInputValue = (e) => {
     setSearchValue(e.target.value);
@@ -86,6 +90,13 @@ const Input = ({ searchValue, setSearchValue }) => {
     setSearchValue("");
   };
 
+  // Add the url query to search bar input
+  useEffect(() => {
+    console.log(router.query.q);
+    if (typeof router.query.q != "undefined") {
+      setSearchValue(router.query.q);
+    }
+  }, []);
 
   return (
     <SearchBarFrame>
@@ -110,7 +121,12 @@ const Input = ({ searchValue, setSearchValue }) => {
             required
           />
         </LabelInput>
-        <ButtonDelete aria-label="Delete" role="button" searchValue={searchValue} onClick={deleteSearchValue}>
+        <ButtonDelete
+          aria-label="Delete"
+          role="button"
+          searchValue={searchValue}
+          onClick={deleteSearchValue}
+        >
           <span tabIndex="0" aria-label="Delete">
             <svg
               focusable="false"
