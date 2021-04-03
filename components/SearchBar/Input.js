@@ -56,11 +56,6 @@ const LabelInput = styled.label`
     font-size: 16px;
     width: 100%;
   }
-
-  /* Mobile */
-  @media only screen and (max-width: 500px) {
-    width: 100%;
-  }
 `;
 
 const ButtonDelete = styled.div`
@@ -79,7 +74,7 @@ const ButtonDelete = styled.div`
   }
 `;
 
-const Input = ({ inputH = "64px", searchValue, setSearchValue }) => {
+const Input = ({ searchValue, setSearchValue }) => {
   // Context
   const { data } = useContext(ApiDataContext);
 
@@ -104,7 +99,7 @@ const Input = ({ inputH = "64px", searchValue, setSearchValue }) => {
             <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
           </svg>
         </span>
-        <LabelInput data={data} inputH={inputH}>
+        <LabelInput data={data}>
           <span>Search</span>
           <input
             type="search"

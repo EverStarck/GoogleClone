@@ -1,51 +1,34 @@
-import Link from "next/link";
-import Image from "next/image";
-import SearchBarContainer from "../../../SearchBar/SearchBarContainer";
-
 import styled from "@emotion/styled";
 import BoxFrame from "./BoxFrame";
 
 const NavInfo = styled.nav`
   display: flex;
   margin-left: 169px;
-  /* justify-content: center; */
   border-bottom: 1px solid #ebebeb;
-  /* align-items: center; */
-  /* position: relative; */
-  /* z-index: 3; */
 
-  /* Mobile */
-  /* @media only screen and (max-width: 500px) {
-    height: 68px;
-    .logo {
+  @media only screen and (max-width: 950px) {
+    margin: 0;
+    justify-content: center;
+  }
+
+  @media only screen and (max-width: 450px) {
+    padding-left: 12px;
+    padding-right: 12px;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
       display: none;
     }
-    section {
-      width: 90%;
-    }
-  } */
+  }
 `;
 
-const Nav = ({ inputH, buttonH }) => {
+const Nav = () => {
   return (
     <NavInfo>
-      <BoxFrame/>
-
-      {/* <div className="logo">
-        <Link href="/">
-          <a>
-            <Image
-              src="/logo.webp"
-              alt="logo of Youtube Api Starck"
-              width={45.5}
-              height={32}
-            />
-          </a>
-        </Link>
-      </div>
-      <section>
-        <SearchBarContainer inputH="50px" buttonH="50px" />
-      </section> */}
+      <BoxFrame />
     </NavInfo>
   );
 };

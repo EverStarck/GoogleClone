@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 
-import AvatarAndBanner from "./AvatarAndBanner";
 import Nav from "./Nav/Nav";
 import TextInfo from "./TextInfo";
 import Header from "./Header";
@@ -20,15 +19,7 @@ const HeaderFrame = () => {
       <Header/>
       <Nav />
       {/* <HeaderInfo>
-        <AvatarAndBanner
-          bannerAndAvatar={bannerAndAvatar}
-          setBannerAndAvatar={setBannerAndAvatar}
-        />
-        <AvatarAndBanner
-          bannerAndAvatar={bannerAndAvatar}
-          setBannerAndAvatar={setBannerAndAvatar}
-          isBanner={false}
-        />
+
       </HeaderInfo> */}
 
       {/* <TextInfo /> */}

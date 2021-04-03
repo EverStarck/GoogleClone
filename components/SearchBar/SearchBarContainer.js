@@ -7,7 +7,7 @@ import { ApiDataContext } from "../../context/ApiDataContext";
 // Components
 import SearchBar from "./SearchBar";
 
-const SearchBarContainer = ({ inputH, buttonH }) => {
+const SearchBarContainer = () => {
   // Context
   const { data, setData } = useContext(ApiDataContext);
 
@@ -32,8 +32,6 @@ const SearchBarContainer = ({ inputH, buttonH }) => {
       searchValue={searchValue}
       setSearchValue={setSearchValue}
       searchSubmit={searchSubmit}
-      inputH={inputH}
-      buttonH={buttonH}
     />
   );
 };

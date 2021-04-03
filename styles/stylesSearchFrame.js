@@ -17,18 +17,6 @@ export const NameGroup = styled.hgroup`
   align-items: center;
 `;
 
-export const FormSearch = styled.form`
-  margin-top: 20px;
-  max-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* Button */
-  span {
-    display: none;
-  }
-`;
 
 export const FooterSearch = styled.footer`
   font-size: clamp(0.75rem, 2vw, 1rem);

@@ -14,6 +14,14 @@ const StyledHeader = styled.header`
     padding-top: 4px;
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 950px) {
+    flex-direction: column;
+    .imgLogoInfo {
+      padding: 0 0 14px 0;
+      margin-right: 0;
+    }
+  }
 `;
 
 const Header = () => {
@@ -32,7 +40,7 @@ const Header = () => {
 
       <SearchBarContainer />
 
-      <GoogleLinks topLinks="25px" />
+      <GoogleLinks topLinks="25px" responsiveLinks={true} />
     </StyledHeader>
   );
 };

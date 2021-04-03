@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const GoogleLinksFrame = styled.div`
   position: absolute;
-  top: ${props => props.topLinks};
+  top: ${(props) => props.topLinks};
   right: 20px;
   display: flex;
   align-items: center;
@@ -19,19 +19,42 @@ const GoogleLinksFrame = styled.div`
       border-radius: var(--radius);
     }
   }
+
+  @media only screen and (max-width: 950px) {
+    top: 17px;
+    right: 10px;
+    .aLink {
+      display: ${(props) => (props.responsiveLinks ? "none" : "inline-block")};
+    }
+  }
 `;
 
-const GoogleLinks = ({topLinks = "15px"}) => {
+const GoogleLinks = ({ topLinks = "15px", responsiveLinks = false }) => {
   return (
-    <GoogleLinksFrame topLinks={topLinks}>
-      <a href="https://mail.google.com" rel="noopener" target="_blank">
+    <GoogleLinksFrame topLinks={topLinks} responsiveLinks={responsiveLinks}>
+      <a
+        className="aLink"
+        href="https://mail.google.com"
+        rel="noopener"
+        target="_blank"
+      >
         Gmail
       </a>
-      <a href="https://www.google.com/imghp" rel="noopener" target="_blank">
+      <a
+        className="aLink"
+        href="https://www.google.com/imghp"
+        rel="noopener"
+        target="_blank"
+      >
         Images
       </a>
       <div className="imgNav">
-        <a href="https://twitter.com/EverStarck" rel="noopener" target="_blank" aria-label="Twitter account of the creator of this google copy">
+        <a
+          href="https://twitter.com/EverStarck"
+          rel="noopener"
+          target="_blank"
+          aria-label="Twitter account of the creator of this google copy"
+        >
           <Image
             src="/logo.webp"
             alt="Picture of the author"

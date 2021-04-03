@@ -15,15 +15,20 @@ const ButtonFrame = () => {
   // Context
   const { data } = useContext(ApiDataContext);
   return (
-    <StyledButtonFrame>
-      {data.loading ? (
-        <Button buttonText="Google Search" type="button" />
-      ) : (
-        <Button buttonText="Google Search" />
-      )}
+    <>
+      {!data.ready && (
+        <StyledButtonFrame>
+          {/* Avoid click the button to call fetchs */}
+          {data.loading ? (
+            <Button buttonText="Google Search" type="button" />
+          ) : (
+            <Button buttonText="Google Search" />
+          )}
 
-      <Button buttonText="I'm Feeling Lucky" type="button" />
-    </StyledButtonFrame>
+          <Button buttonText="I'm Feeling Lucky" type="button" />
+        </StyledButtonFrame>
+      )}
+    </>
   );
 };
 
