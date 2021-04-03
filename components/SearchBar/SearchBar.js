@@ -19,17 +19,17 @@ const FormSearch = styled.form`
   }
 
   @media only screen and (min-width: 950px) {
-    align-items: flex-start;
+    align-items: ${props => props.formAlign ? "flex-start" : "center" };
   }
 `;
 
-const SearchBar = ({ searchValue, setSearchValue, searchSubmit }) => {
+const SearchBar = ({ searchValue, setSearchValue, searchSubmit, formAlign=false }) => {
   // Context
   const { data } = useContext(ApiDataContext);
   const { ready } = data;
 
   return (
-    <FormSearch onSubmit={searchSubmit} ready={ready}>
+    <FormSearch onSubmit={searchSubmit} ready={ready} formAlign={formAlign}>
       <Input searchValue={searchValue} setSearchValue={setSearchValue} />
       <ButtonFrame />
     </FormSearch>

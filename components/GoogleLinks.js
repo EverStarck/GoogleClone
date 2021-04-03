@@ -14,6 +14,9 @@ const GoogleLinksFrame = styled.div`
     text-decoration: none;
     margin-right: 15px;
   }
+  .aLink {
+    margin-top: -5px;
+  }
   .imgNav {
     img {
       border-radius: var(--radius);

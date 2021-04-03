@@ -7,7 +7,7 @@ import { ApiDataContext } from "../../context/ApiDataContext";
 // Components
 import SearchBar from "./SearchBar";
 
-const SearchBarContainer = () => {
+const SearchBarContainer = ({formAlign}) => {
   // Context
   const { data, setData } = useContext(ApiDataContext);
 
@@ -32,6 +32,7 @@ const SearchBarContainer = () => {
       searchValue={searchValue}
       setSearchValue={setSearchValue}
       searchSubmit={searchSubmit}
+      formAlign={formAlign}
     />
   );
 };

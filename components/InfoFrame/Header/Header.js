@@ -38,7 +38,7 @@ const Header = () => {
         </div>
       </Link>
 
-      <SearchBarContainer />
+      <SearchBarContainer formAlign={true}/>
 
       <GoogleLinks topLinks="25px" responsiveLinks={true} />
     </StyledHeader>
