@@ -3,11 +3,12 @@ import BoxFrame from "./BoxFrame";
 
 const NavInfo = styled.nav`
   display: flex;
-  margin-left: 169px;
+  padding-left: 169px;
+  justify-content: flex-start;
   border-bottom: 1px solid #ebebeb;
 
   @media only screen and (max-width: 950px) {
-    margin: 0;
+    padding: 0;
     justify-content: center;
   }
 

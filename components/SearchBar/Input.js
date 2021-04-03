@@ -57,6 +57,7 @@ const LabelInput = styled.label`
     height: 34px;
     font-size: 16px;
     width: 100%;
+    padding-left: ${(props) => (props.data.ready ? "10px" : "0px")};
   }
 `;
 
@@ -73,6 +74,37 @@ const ButtonDelete = styled.div`
     height: 25px;
     svg {
       fill: var(--gray-delete);
+    }
+  }
+`;
+
+const SearchButton = styled.button`
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    height: 65%;
+    width: 1px;
+    position: absolute;
+    left: 0;
+    background-color: #dfe1e5;
+  }
+  span {
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    display: block !important;
+    svg {
+      fill: #4285f4;
     }
   }
 `;
@@ -99,17 +131,20 @@ const Input = ({ searchValue, setSearchValue }) => {
   }, []);
 
   return (
-    <SearchBarFrame>
+    <SearchBarFrame data={data}>
       <div className="searchInputFrame">
-        <span className="searchIconSpan">
-          <svg
-            focusable="false"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-          </svg>
-        </span>
+        {/* Hide search icon on results screen */}
+        {!data.ready && (
+          <span className="searchIconSpan">
+            <svg
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+            </svg>
+          </span>
+        )}
         <LabelInput data={data}>
           <span>Search</span>
           <input
@@ -137,6 +172,20 @@ const Input = ({ searchValue, setSearchValue }) => {
             </svg>
           </span>
         </ButtonDelete>
+        {/* Show search button on results screen */}
+        {data.ready && (
+          <SearchButton aria-label="Google Search" type="submit">
+            <span>
+              <svg
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+              </svg>
+            </span>
+          </SearchButton>
+        )}
       </div>
     </SearchBarFrame>
   );
