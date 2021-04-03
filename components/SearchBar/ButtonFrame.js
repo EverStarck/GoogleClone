@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { useContext } from "react";
+import { ApiDataContext } from "../../context/ApiDataContext";
 
 import Button from "./Button";
 
@@ -10,10 +12,17 @@ const StyledButtonFrame = styled.div`
 `;
 
 const ButtonFrame = () => {
+  // Context
+  const { data } = useContext(ApiDataContext);
   return (
     <StyledButtonFrame>
-      <Button buttonText="Google Search"/>
-      <Button buttonText="I'm Feeling Lucky"/>
+      {data.loading ? (
+        <Button buttonText="Google Search" type="button" />
+      ) : (
+        <Button buttonText="Google Search" />
+      )}
+
+      <Button buttonText="I'm Feeling Lucky" type="button" />
     </StyledButtonFrame>
   );
 };

@@ -23,12 +23,12 @@ const ButtonSearchStyled = styled.button`
   }
 `;
 
-const Button = ({ buttonText, buttonH = "64px" }) => {
+const Button = ({ type="submit", buttonText, buttonH = "64px" }) => {
   return (
     <label>
       <span>Search</span>
       <ButtonSearchStyled
-        type="submit"
+        type={type}
         aria-label={buttonText}
         buttonH={buttonH}
       >

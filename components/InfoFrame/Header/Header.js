@@ -1,41 +1,39 @@
-import {useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import styled from "@emotion/styled";
+import SearchBarContainer from "../../SearchBar/SearchBarContainer";
+import GoogleLinks from "../../GoogleLinks";
 
-import AvatarAndBanner from "./AvatarAndBanner";
-import Nav from "./Nav";
-import TextInfo from './TextInfo'
-
-
-const HeaderInfo = styled.section`
+const StyledHeader = styled.header`
+  height: 100%;
+  margin: 20px 30px 0 30px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  .imgLogoInfo {
+    margin-right: 45px;
+    padding-top: 4px;
+    cursor: pointer;
+  }
 `;
 
 const Header = () => {
-  const [bannerAndAvatar, setBannerAndAvatar] = useState({
-    avatar: [],
-    banner: [],
-  });
   return (
-    <>
-      <Nav />
-      <HeaderInfo>
-        <AvatarAndBanner
-          bannerAndAvatar={bannerAndAvatar}
-          setBannerAndAvatar={setBannerAndAvatar}
-        />
-        <AvatarAndBanner
-          bannerAndAvatar={bannerAndAvatar}
-          setBannerAndAvatar={setBannerAndAvatar}
-          isBanner={false}
-        />
-      </HeaderInfo>
+    <StyledHeader>
+      <Link href="/">
+        <div className="imgLogoInfo">
+          <Image
+            src="/logoInfo.webp"
+            alt="Picture of the author"
+            width={92}
+            height={30}
+          />
+        </div>
+      </Link>
 
-      <TextInfo />
-    </>
+      <SearchBarContainer />
+
+      <GoogleLinks topLinks="25px" />
+    </StyledHeader>
   );
 };
 

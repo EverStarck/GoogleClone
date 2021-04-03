@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styled from "@emotion/styled";
 
-const NavSearchFrame = styled.nav`
+const GoogleLinksFrame = styled.div`
   position: absolute;
-  top: 15px;
+  top: ${props => props.topLinks};
   right: 20px;
   display: flex;
   align-items: center;
@@ -21,9 +21,9 @@ const NavSearchFrame = styled.nav`
   }
 `;
 
-const Nav = () => {
+const GoogleLinks = ({topLinks = "15px"}) => {
   return (
-    <NavSearchFrame>
+    <GoogleLinksFrame topLinks={topLinks}>
       <a href="https://mail.google.com" rel="noopener" target="_blank">
         Gmail
       </a>
@@ -40,8 +40,8 @@ const Nav = () => {
           />
         </a>
       </div>
-    </NavSearchFrame>
+    </GoogleLinksFrame>
   );
 };
 
-export default Nav;
+export default GoogleLinks;

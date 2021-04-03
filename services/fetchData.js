@@ -1,5 +1,5 @@
 export async function fetcher(query) {
-  console.log("Se llama a fetcher");
+  console.log("llamando")
   const response = await fetch(
     `https://everstarckgoogleapi.herokuapp.com/api?query=${query}`
   );

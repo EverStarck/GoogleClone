@@ -43,14 +43,9 @@ const DownloadFrame = () => {
   // Context
   const { data } = useContext(ApiDataContext);
 
-  const [urlSelected, setUrlSelected] = useState({
-    banner: data.ytData[0].banner[0],
-    avatar: data.ytData[0].avatar[0],
-  });
-
   return (
     <DownloadFrameStyled>
-      <div className="width90">
+      {/* <div className="width90">
         <div className="items">
           <TitleFrame
             h3="Banner"
@@ -66,7 +61,7 @@ const DownloadFrame = () => {
         </div>
 
         <ChannelInfoFrame/>
-      </div>
+      </div> */}
     </DownloadFrameStyled>
   );
 };

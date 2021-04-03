@@ -1,13 +1,10 @@
-
-import Router from 'next/router'
+import Router from "next/router";
 import { useContext, useState } from "react";
-import { fetcher } from "../../services/fetchData";
 
 // Context
 import { ApiDataContext } from "../../context/ApiDataContext";
 
 // Components
-import Error from "../Error";
 import SearchBar from "./SearchBar";
 
 const SearchBarContainer = ({ inputH, buttonH }) => {
@@ -15,33 +12,19 @@ const SearchBarContainer = ({ inputH, buttonH }) => {
   const { data, setData } = useContext(ApiDataContext);
 
   const [searchValue, setSearchValue] = useState("");
-  const [error, setError] = useState(false);
 
   const searchSubmit = (e) => {
     e.preventDefault();
 
+    setData({
+      ...data,
+      loading: true,
+    });
+
     Router.push({
-        pathname: '/search',
-        query: { q: searchValue},
-    })
-
-    // Reset the state
-    // setError(false);
-    // if (!error) {
-    //   setData({
-    //     ...data,
-    //     ready: false,
-    //     loading: true,
-    //   });
-
-    //   fetcher(searchValue).then((data) => {
-    //     setData({
-    //       gData: [data],
-    //       ready: true,
-    //       loading: false,
-    //     });
-    //   });
-    // }
+      pathname: "/search",
+      query: { q: searchValue },
+    });
   };
 
   return (
