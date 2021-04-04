@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
 import InfoFrame from "../components/InfoFrame/InfoFrame";
 import { ApiDataContext } from "../context/ApiDataContext";
@@ -7,6 +8,8 @@ import { fetcher } from "../services/fetchData";
 const SearchResults = ({ q, dataFetch }) => {
   // Context
   const { data, setData } = useContext(ApiDataContext);
+  const router = useRouter();
+
   // Mount the fetch data in the state
   useEffect(() => {
     setData({
@@ -18,15 +21,32 @@ const SearchResults = ({ q, dataFetch }) => {
   }, []);
   console.log(data);
 
-  return <InfoFrame />;
+  // Avoid enter to this route if the query is ""
+  function CheckQuery() {
+    useEffect(() => {
+      if (q === "") {
+        router.push("/");
+      }
+    }, [q]);
+    return <InfoFrame />;
+  }
+
+  return <CheckQuery />;
 };
 
 // This gets called on every request
 export async function getServerSideProps({ query }) {
   // query from the url
-  const q = query.q;
-  // let dataFetch = await fetcher(q);
-  let dataFetch = q;
+  let q = query.q;
+  let dataFetch = "";
+
+  // If the url query is wrong, don't call the fectcher
+  if (typeof q === "undefined" || q === "") {
+    q = "";
+  } else {
+    console.log("llamando fetch");
+    dataFetch = await fetcher(q);
+  }
 
   // Pass data to the page via props
   return { props: { q, dataFetch } };
