@@ -124,7 +124,6 @@ const Input = ({ searchValue, setSearchValue }) => {
 
   // Add the url query to search bar input
   useEffect(() => {
-    console.log(router.query.q);
     if (typeof router.query.q != "undefined") {
       setSearchValue(router.query.q);
     }

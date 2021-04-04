@@ -10,14 +10,6 @@ export const MainSearch = styled.main`
   background-color: var(--white);
 `;
 
-export const NameGroup = styled.hgroup`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-
 export const FooterSearch = styled.footer`
   font-size: clamp(0.75rem, 2vw, 1rem);
   position: absolute;

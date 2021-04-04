@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 import { ApiDataContext } from "../../context/ApiDataContext";
 
 import HeaderFrame from "./Header/HeaderFrame";
-import DownloadFrame from "./Main/Download/DownloadFrame";
+import ResultsFrame from "./Results/ResultsFrame";
 
 const InfoFrame = () => {
   // Context
@@ -23,8 +23,8 @@ const InfoFrame = () => {
   return (
     <>
       <NextSeo {...SEO} />
-        <HeaderFrame />
-      <DownloadFrame />
+      <HeaderFrame />
+      <ResultsFrame />
     </>
   );
 };
