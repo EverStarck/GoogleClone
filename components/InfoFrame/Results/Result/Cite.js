@@ -4,6 +4,8 @@ const StyledCite = styled.cite`
   /* font-size: clamp(.7rem, 2vw, 0.875rem); */
   line-height: 1.3;
   font-size: small;
+  color: #202124;
+  font-style: normal;
   span {
     color: var(--gray-nav);
     white-space: nowrap;
@@ -11,11 +13,11 @@ const StyledCite = styled.cite`
   }
 `;
 
-const Cite = () => {
+const Cite = ({dataItem}) => {
   return (
     <StyledCite>
-      https://en.wikipedia.org
-      <span> › wiki › Python_(programming...dsadsadasd</span>
+      {dataItem.cite.big}
+      <span>{dataItem.cite.small}</span>
     </StyledCite>
   );
 };

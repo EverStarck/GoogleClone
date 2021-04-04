@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
+
 import InfoFrame from "../components/InfoFrame/InfoFrame";
 import { ApiDataContext } from "../context/ApiDataContext";
 
@@ -44,8 +45,8 @@ export async function getServerSideProps({ query }) {
   if (typeof q === "undefined" || q === "") {
     q = "";
   } else {
-    console.log("llamando fetch");
-    dataFetch = await fetcher(q);
+    // dataFetch = await fetcher(q);
+    dataFetch = q
   }
 
   // Pass data to the page via props

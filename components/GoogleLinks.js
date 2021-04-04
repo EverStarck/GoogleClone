@@ -38,7 +38,7 @@ const GoogleLinks = ({ topLinks = "15px", responsiveLinks = false }) => {
       <a
         className="aLink"
         href="https://mail.google.com"
-        rel="noopener"
+        rel="noopener noreferrer"
         target="_blank"
       >
         Gmail
@@ -46,7 +46,7 @@ const GoogleLinks = ({ topLinks = "15px", responsiveLinks = false }) => {
       <a
         className="aLink"
         href="https://www.google.com/imghp"
-        rel="noopener"
+        rel="noopener noreferrer"
         target="_blank"
       >
         Images
@@ -54,7 +54,7 @@ const GoogleLinks = ({ topLinks = "15px", responsiveLinks = false }) => {
       <div className="imgNav">
         <a
           href="https://twitter.com/EverStarck"
-          rel="noopener"
+          rel="noopener noreferrer"
           target="_blank"
           aria-label="Twitter account of the creator of this google copy"
         >

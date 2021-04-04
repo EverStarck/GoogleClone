@@ -35,15 +35,15 @@ const StyledResultFrame = styled.div`
   }
 `;
 
-const ResultFrame = () => {
+const ResultFrame = ({ dataItem }) => {
   return (
     <StyledResultFrame>
-      <Cite />
-      <a href="#">
-        <H3 h3="Python (programming language) - Wikipedia" />
+      <Cite dataItem={dataItem} />
+      <a href={dataItem.url} target="_blank" rel="noopener noreferrer">
+        <H3 h3={dataItem.tittle} />
       </a>
 
-      <Description />
+      <Description dataItem={dataItem} />
     </StyledResultFrame>
   );
 };

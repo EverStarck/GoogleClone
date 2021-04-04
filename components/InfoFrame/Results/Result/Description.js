@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import parse from "html-react-parser";
 
 const StyledDescription = styled.div`
   /* max-width: 48em; */
@@ -8,6 +9,7 @@ const StyledDescription = styled.div`
   /* width: 100%; */
   margin-top: 5px;
   p {
+    display: inline-block;
     margin: 0;
     font-size: 0.875rem;
     em {
@@ -16,16 +18,19 @@ const StyledDescription = styled.div`
       color: var(--gray-nav);
     }
   }
+  .dateSpan {
+    color: #70757a;
+    font-size: 0.875rem;
+  }
 `;
 
-const Description = () => {
+const Description = ({ dataItem }) => {
   return (
     <StyledDescription>
-      <p>
-        <em>Python</em> Tutorial ... <em>Python</em> is a programming language.{" "}
-        <em>Python</em> can be used on a server to create web applications.
-        Start learning <em>Python</em> now ». Learning by&nbsp;...
-      </p>
+      {dataItem.description.date && (
+        <span className="dateSpan">{dataItem.description.date}</span>
+      )}
+      <p>{parse(dataItem.description.desc)}</p>
     </StyledDescription>
   );
 };
