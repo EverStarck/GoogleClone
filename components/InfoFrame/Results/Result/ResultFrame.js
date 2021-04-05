@@ -1,19 +1,12 @@
 import styled from "@emotion/styled";
 
 import Cite from "./Cite";
-import H3 from "../H3";
 import Description from "./Description";
+import Tittle from "./Tittle";
+import TableFrame from "../TableFrame";
 
 const StyledResultFrame = styled.div`
   margin-bottom: 28px;
-  a {
-    color: #1a0dab;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
   @media only screen and (max-width: 950px) {
     background-color: var(--white);
     margin-bottom: 8px;
@@ -39,11 +32,12 @@ const ResultFrame = ({ dataItem }) => {
   return (
     <StyledResultFrame>
       <Cite dataItem={dataItem} />
-      <a href={dataItem.url} target="_blank" rel="noopener noreferrer">
-        <H3 h3={dataItem.tittle} />
-      </a>
+      <Tittle dataItem={dataItem} />
 
       <Description dataItem={dataItem} />
+
+      {/* Table */}
+      {dataItem.table.length ? <TableFrame dataItem={dataItem} /> : null}
     </StyledResultFrame>
   );
 };

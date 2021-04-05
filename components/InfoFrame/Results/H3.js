@@ -6,7 +6,7 @@ const H3Styled = styled.h3`
   font-weight: ${(props) => props.fw};
   text-align: ${(props) => props.align};
   line-height: 1.3;
-  padding-top: 4px;
+  padding-top: ${(props) => props.paddingTop};
 `;
 
 const H3 = ({
@@ -15,9 +15,10 @@ const H3 = ({
   align,
   fw = "400",
   margin="0px",
+  paddingTop="4px"
 }) => {
   return (
-    <H3Styled fz={fz} align={align} fw={fw} margin={margin}>
+    <H3Styled fz={fz} align={align} fw={fw} margin={margin} paddingTop={paddingTop}>
       {h3}
     </H3Styled>
   );

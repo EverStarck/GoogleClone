@@ -7,11 +7,12 @@ const StyledDescription = styled.div`
   line-height: 1.58;
   word-wrap: break-word;
   /* width: 100%; */
-  margin-top: 5px;
+  margin-top: 3px;
   p {
-    display: inline-block;
+    display: ${(props) => (props.putDate ? "inline" : "inline-block")};
     margin: 0;
     font-size: 0.875rem;
+    width: ${(props) => (props.putDate ? "100%" : "220px")};
     em {
       font-weight: bold;
       font-style: normal;
@@ -24,13 +25,17 @@ const StyledDescription = styled.div`
   }
 `;
 
-const Description = ({ dataItem }) => {
+const Description = ({
+  dataItem,
+  putDate = true,
+  descText = parse(dataItem.description.desc),
+}) => {
   return (
-    <StyledDescription>
-      {dataItem.description.date && (
+    <StyledDescription putDate={putDate}>
+      {putDate && dataItem.description.date && (
         <span className="dateSpan">{dataItem.description.date}</span>
       )}
-      <p>{parse(dataItem.description.desc)}</p>
+      <p>{descText}</p>
     </StyledDescription>
   );
 };
