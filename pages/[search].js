@@ -6,7 +6,7 @@ import { ApiDataContext } from "../context/ApiDataContext";
 
 import { fetcher } from "../services/fetchData";
 
-const SearchResults = ({ q, dataFetch }) => {
+const SearchResults = ({ q, dataFetch, seconds }) => {
   // Context
   const { data, setData } = useContext(ApiDataContext);
   const router = useRouter();
@@ -19,8 +19,7 @@ const SearchResults = ({ q, dataFetch }) => {
       ready: true,
       loading: false,
     });
-  }, []);
-  console.log(data);
+  }, [dataFetch]);
 
   // Avoid enter to this route if the query is ""
   function CheckQuery() {
@@ -29,7 +28,7 @@ const SearchResults = ({ q, dataFetch }) => {
         router.push("/");
       }
     }, [q]);
-    return <InfoFrame />;
+    return <InfoFrame seconds={seconds}/>;
   }
 
   return <CheckQuery />;
@@ -41,16 +40,21 @@ export async function getServerSideProps({ query }) {
   let q = query.q;
   let dataFetch = "";
 
+  const timeStart = new Date().getTime();
+
   // If the url query is wrong, don't call the fectcher
   if (typeof q === "undefined" || q === "") {
     q = "";
   } else {
-    dataFetch = await fetcher(q);
-    // dataFetch = q
+    // dataFetch = await fetcher(q);
+    dataFetch = q;
   }
 
+  const timeEnd = new Date().getTime();
+  const time = timeEnd - timeStart;
+  const seconds = (time % 60000) / 1000;
   // Pass data to the page via props
-  return { props: { q, dataFetch } };
+  return { props: { q, dataFetch, seconds } };
 }
 
 export default SearchResults;

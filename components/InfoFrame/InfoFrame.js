@@ -5,8 +5,9 @@ import { ApiDataContext } from "../../context/ApiDataContext";
 
 import HeaderFrame from "./Header/HeaderFrame";
 import ResultsFrame from "./Results/ResultsFrame";
+import Footer from "../SearchFrame/Footer";
 
-const InfoFrame = () => {
+const InfoFrame = ({seconds}) => {
   // Context
   const { data } = useContext(ApiDataContext);
   // const info = data.ytData[0].channelInfo;
@@ -24,7 +25,8 @@ const InfoFrame = () => {
     <>
       <NextSeo {...SEO} />
       <HeaderFrame />
-      <ResultsFrame />
+      <ResultsFrame seconds={seconds} />
+      <Footer />
     </>
   );
 };

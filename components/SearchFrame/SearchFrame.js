@@ -37,7 +37,7 @@ const SearchFrame = () => {
           <SearchBarContainer />
         </section>
 
-        <Footer />
+        <Footer changePosition={false}/>
       </MainSearch>
     </>
   );

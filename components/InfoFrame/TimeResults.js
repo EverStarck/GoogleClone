@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { useContext } from "react";
+import { ApiDataContext } from "../../context/ApiDataContext";
 
 const StyledTimeResults = styled.div`
   height: 43px;
@@ -15,10 +17,12 @@ const StyledTimeResults = styled.div`
   }
 `;
 
-const TimeResults = () => {
+const TimeResults = ({ seconds }) => {
+  // Context
+  const { data } = useContext(ApiDataContext);
   return (
     <StyledTimeResults>
-      About 1,460,000,000 results<nobr> (0.68 seconds)&nbsp;</nobr>
+      About {data.gData.length} results<nobr> ({seconds} seconds)&nbsp;</nobr>
     </StyledTimeResults>
   );
 };
