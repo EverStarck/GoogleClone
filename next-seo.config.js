@@ -1,19 +1,19 @@
 export default {
   title: "Google",
   description:
-    "A Google Clone",
+    "Google Clone is a project made by EverStarck. This is not intended to be used for bad purposes, it was only made for practice.",
   canonical: "https://www.canonical.ie/",
   openGraph: {
     type: "website",
     locale: "en_IE",
     url: "https://www.googl.everstarck.com",
-    site_name: "GoogleClone",
+    site_name: "GoogleClone by EverStarck",
     images: [
       {
         url: "./yt2image.png",
         width: 800,
         height: 600,
-        alt: "Image of the site YouTubeToImage.everstarck.com",
+        alt: "Image of the site googl.everstarck.com",
       },
     ],
   },
@@ -57,7 +57,7 @@ export default {
     {
       name: "keywords",
       content:
-        "Google, clone, google chrome",
+        "Google, clone, google chrome, everstarck, starck",
     },
     {
       name: "google-site-verification",
