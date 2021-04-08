@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useContext } from "react";
 import { ApiDataContext } from "../../context/ApiDataContext";
 
-const StyledTimeResults = styled.div`
+const StyledTimeResults = styled.section`
   height: 43px;
   display: flex;
   align-items: center;

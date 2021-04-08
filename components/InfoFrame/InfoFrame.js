@@ -22,7 +22,7 @@ const InfoFrame = ({ seconds }) => {
       <NextSeo {...SEO} />
       <HeaderFrame />
       <ResultsFrame seconds={seconds} />
-      <Footer />
+      <Footer/>
     </>
   );
 };

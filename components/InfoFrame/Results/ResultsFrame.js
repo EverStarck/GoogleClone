@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 import TimeResults from "../TimeResults";
 import ResultFrame from "./Result/ResultFrame";
+import NoResults from "./NoResults";
 
 const StyledResultsFrame = styled.main`
   margin-left: 180px;
@@ -164,26 +165,31 @@ const data = {
       url: "https://www.edx.org/es/aprende/programacion-python",
     },
   ],
+
   ready: true,
   loading: false,
+  // gData: [],
 };
 
-const ResultsFrame = ({seconds}) => {
+const ResultsFrame = ({ seconds }) => {
   // Context
-  // const { data } = useContext(ApiDataContext);
-
+  const { data } = useContext(ApiDataContext);
+  console.log(data)
   const router = useRouter();
   return (
     <StyledResultsFrame>
-      <TimeResults seconds={seconds}/>
-
-      {!router.query.q == "" ? (
+      <TimeResults seconds={seconds} />
+      {!data.gData.length == 0 ? (
         <>
-          {data.gData.map((dataItem) => (
-            <ResultFrame dataItem={dataItem} key={dataItem.id} />
-          ))}
+          {!router.query.q == "" ? (
+            <>
+              {data.gData.map((dataItem) => (
+                <ResultFrame dataItem={dataItem} key={dataItem.id} />
+              ))}
+            </>
+          ) : null}
         </>
-      ) : null}
+      ) : <NoResults/>}
     </StyledResultsFrame>
   );
 };
