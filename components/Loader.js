@@ -1,60 +1,84 @@
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 
-const spin = keyframes`
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+const dotPulse = keyframes`
+  0% {
+    box-shadow: 9999px 0 0 -5px var(--black);
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px var(--black);
+  }
+  60%,
+  100% {
+    box-shadow: 9999px 0 0 -5px var(--black);
+  }
+`;
+
+const dotPulseAfter = keyframes`
+  0% {
+    box-shadow: 10014px 0 0 -5px var(--black);
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px var(--black);
+  }
+  60%,
+  100% {
+    box-shadow: 10014px 0 0 -5px var(--black);
+  }
+`;
+
+const dotPulseBefore = keyframes`
+  0% {
+    box-shadow: 9984px 0 0 -5px var(--black);
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px var(--black);
+  }
+  60%,
+  100% {
+    box-shadow: 9984px 0 0 -5px var(--black);
+  }
 `;
 
 const LoaderFrame = styled.div`
-  min-width: 100vw;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
-  p {
-    margin-top: 200px;
-  }
-  .circle {
-    height: 125px;
-    width: 125px;
-    border-radius: 50%;
-    background-color: #4392f1;
-    position: absolute;
-    animation: ${spin} .6s linear infinite;
+  height: 44px;
+  /* width: 100%;  */
+  min-width: 300px;
+  .dots {
+    position: relative;
+    left: -9999px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--black);
+    color: var(--black);
+    box-shadow: 9999px 0 0 -5px var(--black);
+    animation: ${dotPulse} 1.5s infinite linear;
+    animation-delay: 0.25s;
+    &::before,
     &::after {
       content: "";
-      height: 115px;
-      width: 115px;
-      border-radius: 50%;
-      background-color: var(--white);
+      display: inline-block;
       position: absolute;
-      top: 10px;
-      left: 1px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: var(--black);
+      color: var(--black);
     }
     &::before {
-      content: "";
-      height: 9px;
-      width: 9px;
-      border-radius: 50%;
-      background-color: #4392f1;
-      position: absolute;
-      top: 56%;
-      right: .5px;
-      z-index: 2;
+      box-shadow: 9984px 0 0 -5px var(--black);
+      animation: ${dotPulseBefore} 1.5s infinite linear;
+      animation-delay: 0s;
     }
-    span {
-      height: 50px;
-      width: 80px;
-      background-color: var(--white);
-      position: absolute;
-      bottom: 0px;
-      right: 0px;
+    &::after {
+      box-shadow: 10014px 0 0 -5px var(--black);
+      animation: ${dotPulseAfter} 1.5s infinite linear;
+      animation-delay: 0.5s;
     }
   }
 `;
@@ -62,10 +86,7 @@ const LoaderFrame = styled.div`
 const Loader = () => {
   return (
     <LoaderFrame>
-      <div className="circle">
-        <span></span>
-      </div>
-      <p>Getting info from Youtube...</p>
+      <div className="dots"></div>
     </LoaderFrame>
   );
 };

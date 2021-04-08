@@ -28,7 +28,7 @@ const SearchResults = ({ q, dataFetch, seconds }) => {
         router.push("/");
       }
     }, [q]);
-    return <InfoFrame seconds={seconds}/>;
+    return <InfoFrame seconds={seconds} />;
   }
 
   return <CheckQuery />;

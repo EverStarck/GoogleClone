@@ -22,7 +22,7 @@ const TimeResults = ({ seconds }) => {
   const { data } = useContext(ApiDataContext);
   return (
     <StyledTimeResults>
-      About {data.gData.length} results<nobr> ({seconds} seconds)&nbsp;</nobr>
+      About {data.gData.length} results ({seconds} seconds)&nbsp;
     </StyledTimeResults>
   );
 };

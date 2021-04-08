@@ -31,7 +31,7 @@ const Header = () => {
         <div className="imgLogoInfo">
           <Image
             src="/logoInfo.webp"
-            alt="Picture of the author"
+            alt="Logo of Google company"
             width={92}
             height={30}
           />
