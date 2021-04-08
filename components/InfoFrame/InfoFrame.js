@@ -19,7 +19,7 @@ const InfoFrame = ({ seconds }) => {
 
   return (
     <>
-      <NextSeo {...SEO} />
+      <NextSeo {...SEO} noindex={true} nofollow={true}/>
       <HeaderFrame />
       <ResultsFrame seconds={seconds} />
       <Footer/>

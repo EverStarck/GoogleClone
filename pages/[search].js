@@ -46,8 +46,8 @@ export async function getServerSideProps({ query }) {
   if (typeof q === "undefined" || q === "") {
     q = "";
   } else {
-    dataFetch = await fetcher(q);
-    // dataFetch = q;
+    // dataFetch = await fetcher(q);
+    dataFetch = q;
   }
 
   const timeEnd = new Date().getTime();

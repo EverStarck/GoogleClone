@@ -1,5 +1,7 @@
 export default {
-  title: "Google",
+  title: "GoogleClone",
+  noindex: true,
+  nofollow: true,
   description:
     "Google Clone is a project made by EverStarck. This is not intended to be used for bad purposes, it was only made for practice.",
   canonical: "https://www.canonical.ie/",
@@ -10,7 +12,7 @@ export default {
     site_name: "GoogleClone by EverStarck",
     images: [
       {
-        url: "./yt2image.png",
+        url: "./glone.png",
         width: 800,
         height: 600,
         alt: "Image of the site googl.everstarck.com",
@@ -20,7 +22,7 @@ export default {
   additionalLinkTags: [
     {
       rel: "apple-touch-icon",
-      sizes: "180x180",
+      sizes: "120x120",
       href: "/apple-touch-icon.png",
     },
     {
@@ -56,12 +58,7 @@ export default {
     },
     {
       name: "keywords",
-      content:
-        "Google, clone, google chrome, everstarck, starck",
-    },
-    {
-      name: "google-site-verification",
-      content: "ZJbTYzN7mCOFKfUVozRPtd02757Q7IFuxa8xU-66s48",
+      content: "Google, clone, google chrome, everstarck, starck",
     },
   ],
   twitter: {

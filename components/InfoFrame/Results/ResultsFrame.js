@@ -173,8 +173,7 @@ const data = {
 
 const ResultsFrame = ({ seconds }) => {
   // Context
-  const { data } = useContext(ApiDataContext);
-  console.log(data)
+  // const { data } = useContext(ApiDataContext);
   const router = useRouter();
   return (
     <StyledResultsFrame>
