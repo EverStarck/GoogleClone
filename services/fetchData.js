@@ -1,8 +1,6 @@
 export async function fetcher(query) {
   console.log("llamando");
-  const response = await fetch(
-    `https://everstarckgoogleapi.herokuapp.com/api?query=${query}`
-  );
+  const response = await fetch(`https://everstarckgoogleapi.herokuapp.com/api?query=${query}`);
   console.log(response.status);
 
   if (!response.ok || response.status === "503" || response.status === "500") {

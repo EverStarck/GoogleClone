@@ -30,7 +30,7 @@ const NoResults = () => {
   return (
     <StyledNoResults class="card-section">
       <p className="yourSearchP" role="heading">
-        Your search -<em> {router.query.q} das sdsada</em> - did not match any
+        Your search -<em> {router.query.q}</em> - did not match any
         documents.
       </p>
       <p className="suggestionP">Suggestions:</p>
