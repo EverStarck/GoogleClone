@@ -21,17 +21,31 @@ const ButtonSearchStyled = styled.button`
     border: 1px solid #dadce0;
     color: #202124;
   }
+
+  a {
+    background-color: red;
+    width: 151px;
+    height: 36px;
+  }
 `;
 
-const Button = ({ type="submit", buttonText, buttonH = "64px" }) => {
+const Button = ({
+  type = "submit",
+  buttonText,
+  buttonH = "64px",
+  linkTwitter = false,
+}) => {
+
+  const onClick = () => {
+    if (linkTwitter)  {
+      alert("Yes, you are lucky 💛")
+    }
+  }
+
   return (
     <label>
       <span>Search</span>
-      <ButtonSearchStyled
-        type={type}
-        aria-label={buttonText}
-        buttonH={buttonH}
-      >
+      <ButtonSearchStyled type={type} aria-label={buttonText} buttonH={buttonH} onClick={onClick}>
         {buttonText}
       </ButtonSearchStyled>
     </label>

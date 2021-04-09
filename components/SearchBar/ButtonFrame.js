@@ -25,7 +25,7 @@ const ButtonFrame = () => {
             <Button buttonText="Google Search" />
           )}
 
-          <Button buttonText="I'm Feeling Lucky" type="button" />
+          <Button buttonText="I'm Feeling Lucky" type="button" linkTwitter={true}/>
         </StyledButtonFrame>
       )}
     </>
