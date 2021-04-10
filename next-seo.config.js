@@ -1,7 +1,5 @@
 export default {
   title: "GoogleClone",
-  noindex: true,
-  nofollow: true,
   description:
     "Google Clone is a project made by EverStarck. This is not intended to be used for bad purposes, it was only made for practice.",
   canonical: "https://www.canonical.ie/",
