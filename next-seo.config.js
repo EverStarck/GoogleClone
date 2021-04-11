@@ -1,26 +1,26 @@
 export default {
-  title: "⬇ Download your YouTube Banner and Avatar",
+  title: "GoogleClone",
   description:
-    "✅ Is your YouTube  channel FAMILY FRIENDLY? Discover it and download your Banner and Avatar from your channel with just one click",
+    "Google Clone is a project made by EverStarck. This is not intended to be used for bad purposes, it was only made for practice.",
   canonical: "https://www.canonical.ie/",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://www.yt2img.everstarck.com",
-    site_name: "YouTube2Image",
+    url: "https://www.googl.everstarck.com",
+    site_name: "GoogleClone by EverStarck",
     images: [
       {
-        url: "./yt2image.png",
+        url: "https://www.googl.everstarck.com/glone.png",
         width: 800,
         height: 600,
-        alt: "Image of the site YouTubeToImage.everstarck.com",
+        alt: "Image of the site googl.everstarck.com",
       },
     ],
   },
   additionalLinkTags: [
     {
       rel: "apple-touch-icon",
-      sizes: "180x180",
+      sizes: "120x120",
       href: "/apple-touch-icon.png",
     },
     {
@@ -56,12 +56,7 @@ export default {
     },
     {
       name: "keywords",
-      content:
-        "Download, Youtube, Free, Banner, Avatar, Channel, Family friendly, black list, download banner youtube, download avatar youtube",
-    },
-    {
-      name: "google-site-verification",
-      content: "ZJbTYzN7mCOFKfUVozRPtd02757Q7IFuxa8xU-66s48",
+      content: "Google, clone, google chrome, everstarck, starck",
     },
   ],
   twitter: {

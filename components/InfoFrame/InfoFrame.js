@@ -1,30 +1,28 @@
-import { useContext } from "react";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 
-import { ApiDataContext } from "../../context/ApiDataContext";
+import HeaderFrame from "./Header/HeaderFrame";
+import ResultsFrame from "./Results/ResultsFrame";
+import Footer from "../SearchFrame/Footer";
 
-import Header from "./Header/Header";
-import DownloadFrame from "./Main/Download/DownloadFrame";
-
-const InfoFrame = () => {
-  // Context
-  const { data } = useContext(ApiDataContext);
-  const info = data.ytData[0].channelInfo;
+const InfoFrame = ({ seconds }) => {
+  const router = useRouter();
 
   const SEO = {
-    title: `⬇ ${info.title} Banner and Avatar`,
-    description: `${info.title} is family friendly?. See ${info.title} keywords, description and download banner and avatar profile picture`,
+    title: `${router.query.q} - Google Search`,
+    description: `See all results of ${router.query.q}`,
     openGraph: {
-      title: `⬇ ${info.title} Banner and Avatar`,
-      description: `${info.title} is family friendly?. See ${info.title} keywordsdescription and download banner and avatar profile picture`,
+      title: `${router.query.q} - Google Search`,
+      description: `See all results of ${router.query.q}`,
     },
   };
 
   return (
     <>
-      <NextSeo {...SEO} />
-      <Header />
-      <DownloadFrame />
+      <NextSeo {...SEO} noindex={true} nofollow={true}/>
+      <HeaderFrame />
+      <ResultsFrame seconds={seconds} />
+      <Footer/>
     </>
   );
 };

@@ -5,17 +5,20 @@ const H3Styled = styled.h3`
   margin: ${(props) => props.margin};
   font-weight: ${(props) => props.fw};
   text-align: ${(props) => props.align};
+  line-height: 1.3;
+  padding-top: ${(props) => props.paddingTop};
 `;
 
 const H3 = ({
   h3,
-  fz = "clamp(0.875rem, 5vw, 2rem)",
+  fz = "clamp(1.1rem, 3vw, 1.25rem)",
   align,
-  fw = "600",
+  fw = "400",
   margin="0px",
+  paddingTop="4px"
 }) => {
   return (
-    <H3Styled fz={fz} align={align} fw={fw} margin={margin}>
+    <H3Styled fz={fz} align={align} fw={fw} margin={margin} paddingTop={paddingTop}>
       {h3}
     </H3Styled>
   );
