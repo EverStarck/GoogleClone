@@ -10,7 +10,7 @@ export default {
     site_name: "GoogleClone by EverStarck",
     images: [
       {
-        url: "https://www.googl.everstarck.com/glone.png",
+        url: "https://googl.everstarck.com/glone.png",
         width: 800,
         height: 600,
         alt: "Image of the site googl.everstarck.com",
