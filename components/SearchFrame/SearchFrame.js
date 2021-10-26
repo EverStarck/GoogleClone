@@ -16,6 +16,7 @@ const SearchFrame = () => {
   useEffect(()=>{
     setData({
       ...data,
+      gData: [],
       ready: false,
       loading: false,
     });

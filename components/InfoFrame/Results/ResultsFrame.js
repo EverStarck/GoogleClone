@@ -35,18 +35,18 @@ const ResultsFrame = ({ seconds }) => {
       {/* If the fetch doesn't work well, show error component */}
       {data.gData !== "Error, something goes wrong :(" ? (
         <>
-          {!data.gData.length == 0 ? (
+          {data.gData.length == 0 && data.ready ? (
+            <NoResults />
+          ) : (
             <>
-              {!router.query.q == "" ? (
+              {!router.query.q == "" && (
                 <>
                   {data.gData.map((dataItem) => (
                     <ResultFrame dataItem={dataItem} key={dataItem.id} />
                   ))}
                 </>
-              ) : null}
+              )}
             </>
-          ) : (
-            <NoResults />
           )}
         </>
       ) : (

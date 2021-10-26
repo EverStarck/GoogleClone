@@ -1,4 +1,4 @@
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import { useContext, useState } from "react";
 
 // Context
@@ -7,24 +7,24 @@ import { ApiDataContext } from "../../context/ApiDataContext";
 // Components
 import SearchBar from "./SearchBar";
 
-const SearchBarContainer = ({formAlign}) => {
+const SearchBarContainer = ({ formAlign }) => {
+  const [searchValue, setSearchValue] = useState("");
   // Context
   const { data, setData } = useContext(ApiDataContext);
-
-  const [searchValue, setSearchValue] = useState("");
+  const router = useRouter();
 
   const searchSubmit = (e) => {
     e.preventDefault();
-
-    setData({
-      ...data,
-      loading: true,
-    });
-
-    Router.push({
-      pathname: "/search",
-      query: { q: searchValue },
-    });
+    if (searchValue != router.query.q) {
+      setData({
+        ...data,
+        loading: true,
+      });
+      Router.push({
+        pathname: "/search",
+        query: { q: searchValue },
+      });
+    }
   };
 
   return (
